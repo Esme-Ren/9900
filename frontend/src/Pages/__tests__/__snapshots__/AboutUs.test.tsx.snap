@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutUs should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-z3339j"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-u2vtxm-MuiPaper-root-MuiAppBar-root"
+      style="--Paper-shadow: none;"
+    >
+      <div
+        class="MuiContainer-root css-12pwiy3-MuiContainer-root"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular css-1t0x8et-MuiToolbar-root"
+        >
+          <a
+            class="MuiTypography-root MuiTypography-subtitle1 css-1z0p208-MuiTypography-root"
+            href="/"
+          >
+            SDG
+            <br />
+            ZOO
+          </a>
+          <div
+            class="MuiBox-root css-dq25au"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-z77o6z-MuiButtonBase-root-MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1xf0eoi-MuiSvgIcon-root"
+                data-testid="MenuIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="MuiBox-root css-10s323d"
+          >
+            <a
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1oyog3l-MuiButtonBase-root-MuiButton-root"
+              href="/"
+              tabindex="0"
+            >
+              HOME
+            </a>
+            <a
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1oyog3l-MuiButtonBase-root-MuiButton-root"
+              href="/about-us"
+              tabindex="0"
+            >
+              ABOUT
+            </a>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-769nkz-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+            >
+              FEATURES
+              <span
+                class="MuiButton-icon MuiButton-endIcon MuiButton-iconSizeMedium css-1gulhci-MuiButton-endIcon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+                  data-testid="KeyboardArrowDownIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="MuiBox-root css-1t0e2o"
+          >
+            <button
+              aria-label="Profile settings"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1avsmgh-MuiButtonBase-root-MuiIconButton-root"
+              data-mui-internal-clone-element="true"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-bqh3fr-MuiAvatar-root"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+                  data-testid="PersonIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg css-g3sf3s-MuiContainer-root"
+    >
+      <div
+        class="MuiBox-root css-1xslqfz"
+      >
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-stnzmu-MuiTypography-root"
+        >
+          Welcome to
+        </h5>
+        <h3
+          class="MuiTypography-root MuiTypography-h3 css-w7mvtm-MuiTypography-root"
+        >
+          SDG Zoo
+        </h3>
+        <h6
+          class="MuiTypography-root MuiTypography-subtitle1 css-1i3tsf3-MuiTypography-root"
+        >
+          A simple webpage designed to provide comprehensive and relevant information on the United Nations’ 17 Sustainable Development Goals (SDGs).
+        </h6>
+        <h6
+          class="MuiTypography-root MuiTypography-subtitle1 css-1k76b4y-MuiTypography-root"
+        >
+          More information coming soon...
+        </h6>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

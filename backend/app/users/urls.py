@@ -1,0 +1,50 @@
+from django.urls import path
+from .views import (
+    PendingRegisterView,
+    RegisterView,
+    LoginView,
+    LogoutView,
+    AddBookmarkView,
+    DeleteBookmarkView,
+    GetBookmarksView,
+    GoogleLoginView,
+    UserProfileCombinedView,
+    IsAdminView,
+    UserTeamsView,
+    UserInvitationsView,
+    RespondToInvitationView,
+    DeleteAccountView,
+    RequestPasswordResetView,
+    VerifyResetCodeView,
+    ConfirmPasswordResetView,
+)
+
+urlpatterns = [
+    path('pending-register/', PendingRegisterView.as_view(), name='pendingRegister'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('bookmark/set/', AddBookmarkView.as_view(), name='setBookmark'),
+    path('bookmark/unset/', DeleteBookmarkView.as_view(), name='unsetBookmark'),
+    path('bookmark/get/', GetBookmarksView.as_view(), name='getBookmarks'),
+    path('google-login/', GoogleLoginView.as_view(), name='googleLogin'),
+    path('delete-account/', DeleteAccountView.as_view(), name='deleteAccount'),
+
+    path('profile/', UserProfileCombinedView.as_view(), name='profile-get'),
+    path('profile/<str:username>/',
+         UserProfileCombinedView.as_view(), name='profile-detail'),
+    path('profile/update/', UserProfileCombinedView.as_view(), name='profile-update'),
+
+    path('admin-check/', IsAdminView.as_view(), name='adminCheck'),
+    path('teams/', UserTeamsView.as_view(), name='userTeams'),
+    path('teams/invitations/', UserInvitationsView.as_view(), name='userInvitations'),
+    path('teams/invitations/respond/',
+         RespondToInvitationView.as_view(), name='respondToInvitation'),
+
+    path('password-reset/request/',  RequestPasswordResetView.as_view(),
+         name='passwordResetRequest'),
+    path('password-reset/verify/',   VerifyResetCodeView.as_view(),
+         name='passwordResetVerify'),
+    path('password-reset/confirm/',  ConfirmPasswordResetView.as_view(),
+         name='passwordResetConfirm'),
+]

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateSignUpForm should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-1gaussg"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"
+      style="font-size: 1.6rem; font-weight: bold; margin-bottom: 20px; text-align: center;"
+    >
+      SDG Knowledge Sign Up
+    </p>
+    <div
+      class="MuiBox-root css-1x1nri4"
+    >
+      <input
+        name="username"
+        placeholder="Username"
+        style="width: 85%; padding: 5px 10px; font-size: 12px; border: 1px solid #e0e0e0; border-radius: 5px; box-sizing: border-box;"
+        type="text"
+        value=""
+      />
+      <input
+        name="contact"
+        placeholder="Email"
+        style="width: 85%; padding: 5px 10px; font-size: 12px; border: 1px solid #e0e0e0; border-radius: 5px; box-sizing: border-box;"
+        type="text"
+        value=""
+      />
+      <input
+        name="phonenumber"
+        placeholder="Phone Number (optional)"
+        style="width: 85%; padding: 5px 10px; font-size: 12px; border: 1px solid #e0e0e0; border-radius: 5px; box-sizing: border-box;"
+        type="text"
+        value=""
+      />
+      <input
+        name="password"
+        placeholder="Password"
+        style="width: 85%; padding: 5px 10px; font-size: 12px; border: 1px solid #e0e0e0; border-radius: 5px; box-sizing: border-box;"
+        type="password"
+        value=""
+      />
+      <input
+        name="confirmpassword"
+        placeholder="Confirm Password"
+        style="width: 85%; padding: 5px 10px; font-size: 12px; border: 1px solid #e0e0e0; border-radius: 5px; box-sizing: border-box;"
+        type="password"
+        value=""
+      />
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1ejnzjp-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-imrjgg-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            class="PrivateSwitchBase-input css-j8yymo"
+            data-indeterminate="false"
+            type="checkbox"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-120dh41-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlineBlankIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-rizt0-MuiTypography-root"
+        >
+          Show Password
+        </span>
+      </label>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-colorPrimary css-1eioe9r-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+      >
+        Sign Up
+      </button>
+      <div
+        aria-orientation="horizontal"
+        class="MuiDivider-root MuiDivider-fullWidth MuiDivider-withChildren css-jyffef-MuiDivider-root"
+        role="separator"
+      >
+        <span
+          class="MuiDivider-wrapper css-1134oje-MuiDivider-wrapper"
+        >
+          or continue with
+        </span>
+      </div>
+      <div
+        style="height: 32px;"
+      />
+      <div
+        style="color: rgb(130, 130, 130); font-size: 10px; margin-top: 5px; text-align: center;"
+      >
+        By clicking continue, you agree to our 
+        <a
+          href="https://policies.google.com/terms?hl=en"
+          style="color: rgb(0, 0, 0);"
+        >
+          Terms of Service
+        </a>
+          and 
+        <a
+          href="https://policies.google.com/privacy?hl=en"
+          style="color: rgb(0, 0, 0);"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

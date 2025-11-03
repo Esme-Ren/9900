@@ -1,0 +1,72 @@
+name: 'Run unit tests'
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  backend:
+    runs-on: 'self-hosted'
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+      - name: 'Use Python'
+        uses: 'actions/setup-python@v5'
+        with:
+          python-version: '3.13'
+      - name: 'Start server'
+        run: |
+          docker compose build db
+          docker compose up db -d
+      - name: 'Install dependencies'
+        working-directory: ./backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: 'Run test'
+        working-directory: ./backend/app
+        run: |
+          coverage run manage.py test --keepdb
+          coverage report -m | ./tabulateCoverage.sh >> $GITHUB_STEP_SUMMARY
+          coverage html
+      - name: Upload test results as artifact
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: backend-coverage
+          path: ./backend/app/htmlcov/index.html
+
+  frontend:
+    runs-on: 'self-hosted'
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'   
+      - name: 'Use Node.js'
+        uses: 'actions/setup-node@v4'
+        with:
+          node-version: '22.x'
+      - name: 'Install dependencies'
+        run: 'npm ci'
+      - name: 'Run test'
+        run: 'npm test -- --reporters="jest-junit"'
+        env:
+          JEST_JUNIT_OUTPUT_NAME: 'jest-report.xml'
+          JEST_JUNIT_SUITE_NAME: 'frontend'
+      - name: Upload test results as artifact
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: frontend-test-results
+          path: frontend/jest-report.xml
+      - name: 'Test Report'
+        uses: 'dorny/test-reporter@v2'
+        if: success() || failure()
+        with:
+          artifact: frontend-test-results
+          name: JEST Tests
+          path: '*.xml'
+          reporter: jest-junit
