@@ -1,0 +1,67 @@
+version: '3.8'
+services:
+  db:
+    build:
+      context: ./database
+    environment:
+      # Use environment variables set in .env file or use place-holder defaults
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD:-3900banana}
+      MYSQL_DATABASE: ${DATABASE_NAME:-sdgdb}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      # Pings the database server. Will provide a success response when server
+      # is accepting incoming connections
+      # Note that the temporary server cannot be 127.0.0.1
+      # This avoids false positives
+      test: ["CMD-SHELL", "mysqladmin --user=$${DATABASE_USER:-root} --password=$${DATABASE_PASSWORD:-3900banana} --host=127.0.0.1 ping"]
+      start_period: 0s
+      interval: 5s
+      timeout: 5s
+      # Up to 2 mins before timeout, in case developer's hardware is lacking/slow
+      retries: 24
+
+  web:
+    build:
+      context: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Use environment variables set in .env file or use place-holder defaults
+      DATABASE_HOST: ${DATABASE_HOST:-db}
+      DATABASE_NAME: ${DATABASE_NAME:-sdgdb}
+      DATABASE_USER: ${DATABASE_USER:-root}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-3900banana}
+      DEBUG: "True"
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD:-hohx auae gpkv fwxq}
+      SITE_URL: ${SITE_URL:-http://localhost:3000}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/backend
+    working_dir: /backend/app
+    command: sh -c "python manage.py migrate --fake-initial --noinput && python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dev-Dockerfile
+    environment:
+      CHOKIDAR_USEPOLLING: true
+      WATCHPACK_POLLING: true
+    ports:
+      - "3000:3000"
+    volumes:
+        # read only flag
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    depends_on:
+      - web
+
+volumes:
+  mysql_data:
